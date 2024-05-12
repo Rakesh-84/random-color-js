@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random image color</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		#divID {
+			position: absolute;
+			top: 0;
+			width: 100%;
+			height: 100vh;
+			mix-blend-mode: hue;
+		}
+
+		body {
+			overflow: hidden;
+		}
+
+		img {
+			height: 100vh;
+			width: 100%;
+		}
+	</style>
+</head>
+
+<body>
+    <div style="display: flex;align-items: center; justify-content: center;height: 800px;"><button >click me</button></div>
+    
+	<div id="divID"></div>
+	<script>
+		const divElem = document.getElementById("divID");
+		function randomcolor() {
+			return Math.floor(Math.random() * 255);
+		}
+		divElem.addEventListener('click', () => {
+			divElem.style.backgroundColor = 'rgba('
+				+ randomcolor() + ',' + randomcolor()
+				+ ',' + randomcolor() + '\)'
+		})
+	</script>
+</body>
+</html>
+
